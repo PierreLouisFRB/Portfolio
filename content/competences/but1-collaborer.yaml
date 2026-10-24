@@ -1,0 +1,16 @@
+titre: Collaborer
+annee: but1
+code: C6
+icone: users
+description: Acquérir et exploiter les aptitudes pour travailler efficacement en équipe IT.
+presentation: ''
+acs:
+  - code: AC16.01
+    titre: Appréhender l'écosystème numérique
+    blocs: []
+  - code: AC16.02
+    titre: Découvrir les aptitudes requises selon les différents secteurs informatiques
+    blocs: []
+  - code: AC16.03
+    titre: Identifier les statuts, les fonctions et les rôles de chaque membre d'une équipe pluridisciplinaire
+    blocs: []

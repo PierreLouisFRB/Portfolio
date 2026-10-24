@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import Icone from '../components/Icone.astro';
+import { reader, getCompetences } from '../lib/data';
+const a = await reader.singletons.accueil.read();
+if (!a) throw new Error("Contenu de l'accueil manquant");
+const competences = await getCompetences();
+const apropos = [
+  { titre: 'Études', texte: a.etudes },
+  { titre: 'Localisation', texte: a.localisation },
+  { titre: 'Intérêts', texte: a.interets },
+  { titre: 'Hobbies', texte: a.hobbies },
+].filter((x) => x.texte);
+---
+<Base>
+  <section class="hero">
+    <div class="conteneur hero__in">
+      <div>
+        <div class="etiquette">Portfolio</div>
+        <h1>{a.prenom}<span>{a.nom}</span></h1>
+        <p>{a.accroche}</p>
+        <div class="hero__actions">
+          <a class="btn btn--or" href="/competences">Mes compétences</a>
+          <a class="btn" href="#contact">Me contacter</a>
+        </div>
+      </div>
+      <div class="hero__photo">
+        {a.photo ? <img src={a.photo} alt={`Photo de ${a.prenom}`} /> : <span class="initiales">PL</span>}
+        {a.legendePhoto && <span class="hero__legende">{a.legendePhoto}</span>}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="apropos">
+    <div class="conteneur">
+      <div class="etiquette">À propos</div>
+      <h2 class="titre-section">Qui suis-je ?</h2>
+      <div class="grille apropos">
+        {apropos.map((x) => (
+          <div class="carte"><h3>{x.titre}</h3><p>{x.texte}</p></div>
+        ))}
+        <div class="carte">
+          <h3>Parcours</h3>
+          <p>Mon CV détaillé.</p>
+          {a.cv ? <a class="btn btn--or" style="margin-top:14px" href={a.cv} download>Télécharger le PDF</a> : <p class="muted" style="margin-top:10px">CV bientôt disponible.</p>}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="conteneur">
+      <div class="etiquette">Explorer</div>
+      <h2 class="titre-section">Découvrez mon portfolio.</h2>
+      <a class="carte explorer" href="/competences">
+        <div style="display:flex;gap:20px;align-items:center">
+          <span class="explorer__num">01</span>
+          <div>
+            <h3 style="font-size:1.3rem">Compétences BUT</h3>
+            <p class="muted" style="margin:4px 0 0">Les 6 compétences du programme national BUT Informatique et mes apprentissages critiques, avec mes réalisations. {competences.length} fiches.</p>
+          </div>
+        </div>
+        <span class="btn btn--or">Explorer <Icone nom="link" taille={14} /></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="conteneur">
+      <div class="etiquette">Contact</div>
+      <h2 class="titre-section">Envoyer un message</h2>
+      <form class="formulaire" name="contact" method="POST" action="/merci" data-netlify="true" netlify-honeypot="pot">
+        <input type="hidden" name="form-name" value="contact" />
+        <p hidden><label>Ne pas remplir <input name="pot" /></label></p>
+        <label>Nom <input name="nom" required /></label>
+        <label>Email <input type="email" name="email" required /></label>
+        <label>Message <textarea name="message" rows="5" required></textarea></label>
+        <button class="btn btn--or" type="submit" style="width:fit-content">Envoyer</button>
+      </form>
+      {a.email && <p class="muted" style="margin-top:18px">Ou directement : <a class="or" href={`mailto:${a.email}`}>{a.email}</a></p>}
+    </div>
+  </section>
+</Base>

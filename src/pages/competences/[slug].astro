@@ -1,0 +1,51 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icone from '../../components/Icone.astro';
+import { getCompetences, ANNEES } from '../../lib/data';
+
+export async function getStaticPaths() {
+  const competences = await getCompetences();
+  return competences.map(({ slug, entry }) => ({ params: { slug }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const annee = ANNEES.find((a) => a.id === entry.annee);
+---
+<Base titre={`${entry.code} ${entry.titre}`} description={entry.description}>
+  <section class="section">
+    <div class="conteneur" style="max-width:860px">
+      <a class="retour" href={`/competences#${entry.annee}`}>← Retour aux compétences</a>
+      <div style="display:flex;gap:14px;align-items:center;margin-top:24px">
+        <span class="pastille"><Icone nom={entry.icone} /></span>
+        <span class="etiquette">{annee?.label} · {entry.code}</span>
+      </div>
+      <h1 class="titre-section" style="margin-bottom:12px">{entry.titre}</h1>
+      <p class="muted" style="font-size:1.1rem">{entry.description}</p>
+      {entry.presentation && <p style="white-space:pre-line">{entry.presentation}</p>}
+
+      <h2 style="margin-top:40px;font-size:1.3rem">Apprentissages critiques</h2>
+      {entry.acs.map((ac, i) => (
+        <details class="carte ac" open={i === 0}>
+          <summary><span class="ac__code">{ac.code}</span><span class="ac__titre">{ac.titre}</span></summary>
+          <div class="blocs">
+            {ac.blocs.length === 0 && <p class="muted" style="margin:0">Contenu à venir.</p>}
+            {ac.blocs.map((b) => {
+              if (b.discriminant === 'texte') return (
+                <div class="bloc-texte">{b.value.titre && <h4>{b.value.titre}</h4>}<p>{b.value.texte}</p></div>
+              );
+              if (b.discriminant === 'image' && b.value.image) return (
+                <div class="bloc-image"><figure><img src={b.value.image} alt={b.value.legende || ac.titre} loading="lazy" />{b.value.legende && <figcaption>{b.value.legende}</figcaption>}</figure></div>
+              );
+              if (b.discriminant === 'fichier' && b.value.fichier) return (
+                <a class="bloc-fichier" href={b.value.fichier} download={b.value.nom + (b.value.fichier.match(/\.[a-z0-9]+$/i)?.[0] ?? '')}><Icone nom="file" />{b.value.nom}</a>
+              );
+              if (b.discriminant === 'lien' && b.value.url) return (
+                <a class="bloc-lien" href={b.value.url} target="_blank" rel="noopener"><Icone nom="link" />{b.value.texte}</a>
+              );
+              return null;
+            })}
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+</Base>

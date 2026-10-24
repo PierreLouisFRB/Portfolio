@@ -1,0 +1,20 @@
+titre: Réaliser
+annee: but1
+code: C1
+icone: code
+description: >-
+  Développer — concevoir, coder, tester et intégrer — une solution informatique
+  pour un client.
+acs:
+  - code: AC11.01
+    titre: Implémenter des conceptions simples
+    blocs: []
+  - code: AC11.02
+    titre: Élaborer des conceptions simples
+    blocs: []
+  - code: AC11.03
+    titre: Faire des essais et évaluer leurs résultats en regard des spécifications
+    blocs: []
+  - code: AC11.04
+    titre: Développer des interfaces utilisateurs
+    blocs: []

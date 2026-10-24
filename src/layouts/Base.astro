@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+import { reader } from '../lib/data';
+interface Props { titre?: string; description?: string }
+const { titre, description = 'Portfolio de Pierre-Louis Fraboulet, étudiant en BUT Informatique à l\'IUT de Laval.' } = Astro.props;
+const accueil = await reader.singletons.accueil.read();
+const nomComplet = `${accueil?.prenom ?? ''} ${accueil?.nom ?? ''}`.trim();
+const chemin = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="description" content={description} />
+    <title>{titre ? `${titre} · ${nomComplet}` : nomComplet}</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="entete">
+      <div class="conteneur entete__in">
+        <a href="/" class="logo">PL</a>
+        <nav class="nav">
+          <a href="/" aria-current={chemin === '/' ? 'page' : undefined}>Accueil</a>
+          <a href="/competences" aria-current={chemin.startsWith('/competences') ? 'page' : undefined}>Compétences</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="pied">
+      <div class="conteneur pied__in">
+        <div><span class="logo">PL</span> <span class="muted">{nomComplet} · Étudiant BUT Informatique</span></div>
+        <div class="muted">© {new Date().getFullYear()} {accueil?.prenom} · Tous droits réservés</div>
+      </div>
+    </footer>
+  </body>
+</html>

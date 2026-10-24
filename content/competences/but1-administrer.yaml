@@ -1,0 +1,19 @@
+titre: Administrer
+annee: but1
+code: C3
+icone: server
+description: Installer, configurer, déployer et maintenir des infrastructures, services et réseaux.
+presentation: ''
+acs:
+  - code: AC13.01
+    titre: Identifier les différents composants (matériels et logiciels) d'un système numérique
+    blocs: []
+  - code: AC13.02
+    titre: Utiliser les fonctionnalités de base d'un système multitâches / multiutilisateurs
+    blocs: []
+  - code: AC13.03
+    titre: Installer et configurer un système d'exploitation et des outils de développement
+    blocs: []
+  - code: AC13.04
+    titre: Configurer un poste de travail dans un réseau d'entreprise
+    blocs: []

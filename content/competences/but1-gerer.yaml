@@ -1,0 +1,16 @@
+titre: Gérer
+annee: but1
+code: C4
+icone: database
+description: Concevoir, exploiter et administrer des bases de données pour piloter l'activité d'une organisation.
+presentation: ''
+acs:
+  - code: AC14.01
+    titre: Mettre à jour et interroger une base de données relationnelle
+    blocs: []
+  - code: AC14.02
+    titre: Visualiser des données
+    blocs: []
+  - code: AC14.03
+    titre: Concevoir une base de données relationnelle à partir d'un cahier des charges
+    blocs: []

@@ -1,0 +1,16 @@
+titre: Optimiser
+annee: but1
+code: C2
+icone: cpu
+description: Appréhender et construire des algorithmes, évaluer leur complexité et les optimiser.
+presentation: ''
+acs:
+  - code: AC12.01
+    titre: Analyser un problème avec méthode
+    blocs: []
+  - code: AC12.02
+    titre: Comparer des algorithmes pour des problèmes classiques
+    blocs: []
+  - code: AC12.03
+    titre: Formaliser et mettre en œuvre des outils mathématiques pour l'informatique
+    blocs: []

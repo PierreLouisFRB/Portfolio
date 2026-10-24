@@ -1,0 +1,66 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icone from '../../components/Icone.astro';
+import { reader, getCompetences, ANNEES } from '../../lib/data';
+const competences = await getCompetences();
+const annees = (await reader.singletons.annees.read()) ?? { but1: false, but2: false, but3: false };
+const parAnnee = ANNEES.map((an) => ({
+  ...an,
+  aVenir: annees[an.id],
+  liste: competences.filter((c) => c.entry.annee === an.id),
+}));
+const compter = (acs: { blocs: unknown[] }[]) => acs.filter((ac) => ac.blocs.length > 0).length;
+---
+<Base titre="Compétences" description="Les 6 compétences du BUT Informatique et mes apprentissages critiques.">
+  <section class="section">
+    <div class="conteneur">
+      <div class="etiquette">Portfolio BUT Informatique</div>
+      <h1 class="titre-section">Mes compétences</h1>
+
+      <div class="onglets" role="tablist">
+        {parAnnee.map((an, i) => (
+          <button class="onglet" role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-annee={an.id}>{an.label}</button>
+        ))}
+      </div>
+
+      {parAnnee.map((an, i) => (
+        <div class="panneau" data-annee={an.id} role="tabpanel" hidden={i !== 0}>
+          {an.aVenir || an.liste.length === 0 ? (
+            <div class="carte a-venir">Le contenu de {an.label} sera ajouté au fil de l'année. À venir !</div>
+          ) : (
+            <div class="grille">
+              {an.liste.map(({ slug, entry }) => (
+                <a class="carte" href={`/competences/${slug}`}>
+                  <span class="pastille"><Icone nom={entry.icone} /></span>
+                  <div class="comp__code">{entry.code}</div>
+                  <h2 class="comp__titre">{entry.titre}</h2>
+                  <p class="comp__desc">{entry.description}</p>
+                  <div class="comp__pied">
+                    <span>{compter(entry.acs)}/{entry.acs.length} ACs documentés</span>
+                    <span>Voir les ACs →</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+
+      <div class="carte encadre" style="margin-top:40px">
+        <h3 class="or" style="font-size:1rem;margin-bottom:6px">Programme national</h3>
+        <p class="muted" style="margin:0">Le BUT Informatique est un diplôme national en 3 ans. Ses six compétences sont définies par l'arrêté du 29 juillet 2022 et communes à tous les IUT.</p>
+      </div>
+    </div>
+  </section>
+  <script>
+    const onglets = document.querySelectorAll<HTMLButtonElement>('.onglet');
+    const panneaux = document.querySelectorAll<HTMLElement>('.panneau');
+    function choisir(id: string) {
+      onglets.forEach((o) => o.setAttribute('aria-selected', String(o.dataset.annee === id)));
+      panneaux.forEach((p) => (p.hidden = p.dataset.annee !== id));
+    }
+    onglets.forEach((o) => o.addEventListener('click', () => { choisir(o.dataset.annee!); history.replaceState(null, '', '#' + o.dataset.annee); }));
+    const h = location.hash.slice(1);
+    if (h) choisir(h);
+  </script>
+</Base>
