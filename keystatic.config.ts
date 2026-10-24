@@ -1,6 +1,6 @@
 import { config, collection, singleton, fields } from '@keystatic/core';
 
-const repo = import.meta.env.PUBLIC_GITHUB_REPO as `${string}/${string}` | undefined;
+const repo = (import.meta.env.PUBLIC_GITHUB_REPO ?? 'PierreLouisFRB/portfolio') as `${string}/${string}`;
 
 const blocs = fields.blocks(
   {
