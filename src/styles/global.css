@@ -113,3 +113,13 @@ a.carte:hover { border-color: var(--or); transform: translateY(-2px); }
 .bloc-texte.mise-en-avant { background: var(--carte-2); border-radius: 8px; padding: 14px 16px; }
 .bloc-texte.mise-en-avant p { font-style: italic; margin: 0; }
 .bloc-texte.mise-en-avant p::before { content: '💡 '; font-style: normal; }
+.galerie { display: flex; flex-wrap: wrap; gap: 10px; }
+.vignette { padding: 0; border: 1px solid var(--bord); border-radius: 6px; background: #fff; cursor: zoom-in; width: 96px; height: 72px; overflow: hidden; }
+.vignette img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.vignette:hover { border-color: var(--or); }
+.visionneuse { border: 1px solid var(--bord); border-radius: 12px; background: var(--carte); color: var(--texte); padding: 16px; max-width: min(95vw, 1200px); max-height: 92vh; }
+.visionneuse::backdrop { background: rgba(0,0,0,.8); }
+.visionneuse img { width: min(85vw, 900px); max-height: 80vh; object-fit: contain; display: block; margin: 0 auto; border-radius: 6px; }
+.visionneuse p { color: var(--muted); text-align: center; margin: 8px 0 0; }
+.visionneuse p:empty { display: none; }
+.visionneuse .fermer { position: absolute; top: 6px; right: 10px; background: none; border: 0; color: var(--texte); font-size: 1.6rem; cursor: pointer; }

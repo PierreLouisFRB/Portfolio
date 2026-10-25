@@ -15,6 +15,18 @@ acs:
       titre: ''
       texte: Dans le cadre de la SAÉ 2.04, j'ai mis en œuvre le langage SQL pour exploiter la base de données de gestion des absences des étudiants. J'ai rédigé le script d'insertion des données initiales. J'ai également écrit des requêtes d'interrogation et de manipulation de données pour répondre aux besoins des différents profils utilisateurs (Secrétaire, Enseignant, Directeur des études), en utilisant des jointures, des vues et en gérant les droits d'accès via la création de rôles SQL.
       miseEnAvant: true
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-gerer/acs/0/blocs/1/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-gerer/acs/0/blocs/2/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-gerer/acs/0/blocs/3/value/image.png
+      legende: ''
 - code: AC14-02
   titre: Visualiser des données
   description: Choisir et produire des représentations graphiques adaptées pour communiquer des données.
@@ -24,6 +36,18 @@ acs:
       titre: ''
       texte: Afin de rendre les données compréhensibles pour un utilisateur ou un client, j'ai mis en forme les résultats obtenus via nos requêtes pour présenter les indicateurs clés demandés dans le sujet.
       miseEnAvant: true
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-gerer/acs/1/blocs/1/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-gerer/acs/1/blocs/2/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-gerer/acs/1/blocs/3/value/image.png
+      legende: ''
 - code: AC14-03
   titre: Concevoir une base de données relationnelle
   description: Modéliser un schéma entité-association, normaliser et générer le schéma SQL correspondant.
@@ -33,3 +57,11 @@ acs:
       titre: ''
       texte: Avant de coder la base de données, j'ai participé à sa modélisation. À partir d'un cahier des charges textuel, j'ai extrait les règles de gestion pour concevoir le Modèle Conceptuel de Données (MCD) puis le Modèle Logique de Données (MLD). J'ai défini les entités, les types d'attributs, ainsi que les clés primaires et étrangères afin d'assurer l'intégrité et la cohérence de la base.
       miseEnAvant: true
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-gerer/acs/2/blocs/1/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-gerer/acs/2/blocs/2/value/image.png
+      legende: ''

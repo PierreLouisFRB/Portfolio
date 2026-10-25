@@ -33,3 +33,23 @@ acs:
       titre: ''
       texte: Une fois les algorithmes fonctionnels, j'ai mené une étude comparative en collectant le temps d'exécution ainsi que le nombre d'étapes (steps) nécessaires à la résolution sur un ensemble de 8 donjons tests. L'analyse des résultats statistiques m'a permis de chiffrer l'efficacité de chaque approche. J'ai pu observer empiriquement l'impact majeur de la fonction heuristique de A* qui réduit drastiquement l'espace de recherche (le nombre de nœuds visités) par rapport à un parcours à l'aveugle comme BFS, optimisant ainsi l'usage des ressources système.
       miseEnAvant: true
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-optimiser/acs/2/blocs/1/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-optimiser/acs/2/blocs/2/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-optimiser/acs/2/blocs/3/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-optimiser/acs/2/blocs/4/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-optimiser/acs/2/blocs/5/value/image.png
+      legende: ''

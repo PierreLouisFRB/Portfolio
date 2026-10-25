@@ -9,6 +9,22 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const annee = ANNEES.find((a) => a.id === entry.annee);
+
+type Bloc = (typeof entry.acs)[number]['blocs'][number];
+type Image = Extract<Bloc, { discriminant: 'image' }>['value'];
+// Regroupe les images qui se suivent en une galerie de miniatures.
+function grouper(blocs: Bloc[]) {
+  const out: ({ galerie: Image[] } | { bloc: Bloc })[] = [];
+  for (const b of blocs) {
+    if (b.discriminant === 'image') {
+      if (!b.value.image) continue;
+      const dernier = out.at(-1);
+      if (dernier && 'galerie' in dernier) dernier.galerie.push(b.value);
+      else out.push({ galerie: [b.value] });
+    } else out.push({ bloc: b });
+  }
+  return out;
+}
 ---
 <Base titre={`${entry.code} ${entry.titre}`} description={entry.description}>
   <section class="section">
@@ -23,18 +39,25 @@ const annee = ANNEES.find((a) => a.id === entry.annee);
       {entry.presentation && <p style="white-space:pre-line">{entry.presentation}</p>}
 
       <h2 style="margin-top:40px;font-size:1.3rem">Apprentissages critiques</h2>
-      {entry.acs.map((ac, i) => (
-        <details class="carte ac" open={i === 0}>
+      {entry.acs.map((ac) => (
+        <details class="carte ac" open>
           <summary><span class="ac__code">{ac.code}</span><span class="ac__titre">{ac.titre}</span></summary>
           {ac.description && <p class="muted" style="margin:10px 0 0">{ac.description}</p>}
           <div class="blocs">
             {ac.blocs.length === 0 && <p class="muted" style="margin:0">Contenu à venir.</p>}
-            {ac.blocs.map((b) => {
+            {grouper(ac.blocs).map((item) => {
+              if ('galerie' in item) return (
+                <div class="galerie">
+                  {item.galerie.map((img) => (
+                    <button type="button" class="vignette" data-src={img.image} data-legende={img.legende}>
+                      <img src={img.image} alt={img.legende || ac.titre} loading="lazy" />
+                    </button>
+                  ))}
+                </div>
+              );
+              const b = item.bloc;
               if (b.discriminant === 'texte') return (
                 <div class:list={['bloc-texte', { 'mise-en-avant': b.value.miseEnAvant }]}>{b.value.titre && <h4>{b.value.titre}</h4>}<p>{b.value.texte}</p></div>
-              );
-              if (b.discriminant === 'image' && b.value.image) return (
-                <div class="bloc-image"><figure><img src={b.value.image} alt={b.value.legende || ac.titre} loading="lazy" />{b.value.legende && <figcaption>{b.value.legende}</figcaption>}</figure></div>
               );
               if (b.discriminant === 'fichier' && b.value.fichier) return (
                 <a class="bloc-fichier" href={b.value.fichier} download={b.value.nom + (b.value.fichier.match(/\.[a-z0-9]+$/i)?.[0] ?? '')}><Icone nom="file" />{b.value.nom}</a>
@@ -49,4 +72,20 @@ const annee = ANNEES.find((a) => a.id === entry.annee);
       ))}
     </div>
   </section>
+  <dialog class="visionneuse" id="visionneuse">
+    <form method="dialog"><button class="fermer" aria-label="Fermer">×</button></form>
+    <img alt="" />
+    <p></p>
+  </dialog>
+  <script>
+    const v = document.getElementById('visionneuse') as HTMLDialogElement;
+    document.querySelectorAll<HTMLButtonElement>('.vignette').forEach((b) =>
+      b.addEventListener('click', () => {
+        v.querySelector('img')!.src = b.dataset.src!;
+        v.querySelector('p')!.textContent = b.dataset.legende ?? '';
+        v.showModal();
+      })
+    );
+    v.addEventListener('click', (e) => { if (e.target === v) v.close(); });
+  </script>
 </Base>

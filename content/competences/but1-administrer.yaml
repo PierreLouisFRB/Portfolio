@@ -15,6 +15,18 @@ acs:
       titre: ''
       texte: Dans le cadre de la SAÉ 2.03, j'ai réalisé un guide d'installation complet pour déployer une pile LAMP (Linux, Apache, MySQL, PHP) et une application CGI (Biorythmes) sur une machine virtuelle Linux (Ubuntu/Debian). J'ai configuré l'environnement de développement en installant les outils de compilation essentiels (gcc, make) et en automatisant la génération de l'application via un fichier Makefile. J'ai également géré les variables d'environnement et les répertoires cibles pour le déploiement des scripts CGI.
       miseEnAvant: true
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-administrer/acs/0/blocs/1/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-administrer/acs/0/blocs/2/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-administrer/acs/0/blocs/3/value/image.png
+      legende: ''
 - code: AC13-02
   titre: Utiliser les fonctionnalités d'un système multitâches
   description: 'Manipuler en ligne de commande un OS Linux : processus, droits, redirections, scripts shell.'
@@ -24,6 +36,14 @@ acs:
       titre: ''
       texte: Dans le cadre de la SAÉ 2.03, j'ai appréhendé la configuration et la connectivité réseaux nécessaires à l'administration d'un serveur distant. Pour réaliser l'installation de la pile LAMP, j'ai dû utiliser des protocoles et services réseau fondamentaux. Je me suis connecté à la machine virtuelle de manière sécurisée via le protocole SSH sur le port 22. J'ai également configuré le serveur web Apache pour écouter les requêtes HTTP entrantes (port 80) et j'ai validé la bonne connectivité réseau de la machine en mettant à jour les paquets distants via Internet.
       miseEnAvant: true
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-administrer/acs/1/blocs/1/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-administrer/acs/1/blocs/2/value/image.png
+      legende: ''
 - code: AC13-03
   titre: Installer et configurer un système d'exploitation
   description: Déployer et paramétrer un OS et des outils de développement sur une machine physique ou virtuelle.
@@ -33,6 +53,22 @@ acs:
       titre: ''
       texte: La réalisation de la SAÉ 2.03 m'a permis de maîtriser l'administration d'un serveur Linux exclusivement en ligne de commande (via une connexion distante SSH). J'ai manipulé les commandes de gestion des paquets (apt update, apt install) pour installer les services réseau, et j'ai configuré les droits d'accès et de sécurité fins des fichiers et répertoires à l'aide des commandes chmod (notamment chmod 755 pour exécuter les scripts CGI) et chown pour la gestion des utilisateurs système (comme l'utilisateur info).
       miseEnAvant: true
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-administrer/acs/2/blocs/1/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-administrer/acs/2/blocs/2/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-administrer/acs/2/blocs/3/value/image.png
+      legende: ''
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-administrer/acs/2/blocs/4/value/image.png
+      legende: ''
 - code: AC13-04
   titre: Configurer un poste dans un réseau d'entreprise
   description: Configurer adressage IP, DNS, passerelle ; diagnostiquer la connectivité réseau.
@@ -42,3 +78,7 @@ acs:
       titre: ''
       texte: Pour l'infrastructure de la SAÉ 2.03, l'intégralité du serveur web et de la base de données a été déployée sur une machine virtuelle Linux isolée. J'ai appris à me connecter à cet environnement virtualisé, à comprendre l'importance de l'isolation des services (séparation de la machine hôte et de la machine de production) et à configurer le serveur Apache pour qu'il serve les pages web et exécute les requêtes de l'application CGI à travers le réseau.
       miseEnAvant: true
+  - discriminant: image
+    value:
+      image: /uploads/images/but1-administrer/acs/3/blocs/1/value/image.png
+      legende: ''
