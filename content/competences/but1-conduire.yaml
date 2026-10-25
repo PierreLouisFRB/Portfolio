@@ -1,16 +1,35 @@
 titre: Conduire
+sousTitre: ''
 annee: but1
 code: C5
 icone: layout
 description: Gérer les besoins, contraintes, ressources et risques d'un projet informatique.
 presentation: ''
 acs:
-  - code: AC15.01
-    titre: Appréhender les besoins du client et de l'utilisateur
-    blocs: []
-  - code: AC15.02
-    titre: Mettre en place les outils de gestion de projet
-    blocs: []
-  - code: AC15.03
-    titre: Identifier les acteurs et les différentes phases d'un cycle de développement
-    blocs: []
+- code: AC15-01
+  titre: Identifier les besoins métiers des clients
+  description: Recueillir et formaliser les besoins utilisateurs (interviews, user stories, cahier des charges).
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: Dans le cadre de la SAÉ 2.05, j'ai participé activement à la rédaction des spécifications de l'application de gestion des absences. Je me suis basé sur les besoins de Le Mans Université pour concevoir les cas d'utilisation (Use Cases) par acteur ainsi que les diagrammes de séquence associés. J'ai ensuite formalisé les spécifications fonctionnelles du système selon le modèle IEEE 830, complétées par les maquettes de l'application et un glossaire métier pour assurer une compréhension parfaite entre le client et l'équipe technique.
+      miseEnAvant: true
+- code: AC15-02
+  titre: Identifier les acteurs et phases d'un cycle de développement
+  description: Comprendre et comparer les méthodes agiles et cycle en V ; identifier les rôles (PO, SM, Dev…).
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: Pour piloter l'analyse de ce projet, j'ai mobilisé les concepts de gestion d'organisation de la ressource R2.10. J'ai collaboré à la planification générale de l'ensemble du projet pour l'université en concevant les diagrammes PERT et GANTT, ce qui nous a permis de mettre en évidence le chemin critique. De plus, j'ai participé à la construction du plan de gestion des risques en appliquant les méthodes QQOQCP et le diagramme d'Ishikawa afin d'anticiper les contraintes humaines et techniques.
+      miseEnAvant: true
+- code: AC15-03
+  titre: Mettre en place les outils de gestion de projet
+  description: Utiliser des outils de ticketing, kanban, versionning (Git) et de planification (Gantt, backlog).
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: Grâce à la réalisation complète du dossier d'analyse, j'ai appréhendé la complexité du cycle de vie d'un projet informatique, depuis son amorce jusqu'à sa viabilité économique. J'ai contribué à l'étude préalable en identifiant les contraintes du client, puis j'ai participé à l'élaboration de la stratégie financière de notre start-up. L'estimation des coûts matériels, logiciels et de la masse salariale (RH) m'a permis de comprendre comment valider la faisabilité économique d'un projet avant son développement.
+      miseEnAvant: true

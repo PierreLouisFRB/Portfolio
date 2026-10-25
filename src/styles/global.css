@@ -108,3 +108,8 @@ a.carte:hover { border-color: var(--or); transform: translateY(-2px); }
   .nav { gap: 14px; }
   .section { padding: 56px 0; }
 }
+
+.titre-comp em { color: var(--or); font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
+.bloc-texte.mise-en-avant { background: var(--carte-2); border-radius: 8px; padding: 14px 16px; }
+.bloc-texte.mise-en-avant p { font-style: italic; margin: 0; }
+.bloc-texte.mise-en-avant p::before { content: '💡 '; font-style: normal; }

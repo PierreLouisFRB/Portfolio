@@ -1,20 +1,39 @@
 titre: Réaliser
+sousTitre: le développement d'une application
 annee: but1
 code: C1
 icone: code
-description: >-
-  Développer — concevoir, coder, tester et intégrer — une solution informatique
-  pour un client.
+description: Développer — concevoir, coder, tester et intégrer — une solution informatique pour un client.
+presentation: ''
 acs:
-  - code: AC11.01
-    titre: Implémenter des conceptions simples
-    blocs: []
-  - code: AC11.02
-    titre: Élaborer des conceptions simples
-    blocs: []
-  - code: AC11.03
-    titre: Faire des essais et évaluer leurs résultats en regard des spécifications
-    blocs: []
-  - code: AC11.04
-    titre: Développer des interfaces utilisateurs
-    blocs: []
+- code: AC11-01
+  titre: Implémenter des conceptions simples
+  description: Traduire une conception algorithmique ou UML en code fonctionnel dans un ou plusieurs langages.
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: Dans le cadre de la SAÉ 2.01, j'ai participé au développement d'une application lourde de gestion de Tier-lists en Java. À partir de la planification initiale et du découpage logique de l'application (arbre des tâches), j'ai traduit les fonctionnalités attendues en fonctionnalités applicatives. J'ai notamment travaillé sur l'intégration des fonctionnalités obligatoires telles que la manipulation des catégories, la gestion des items et l'import/export de fichiers locaux.
+      miseEnAvant: true
+- code: AC11-02
+  titre: Élaborer des conceptions simples
+  description: Analyser un problème et proposer une conception logicielle adaptée (diagrammes, pseudo-code…).
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: Avant de démarrer la phase de codage, j'ai contribué à la phase de conception fonctionnelle de l'application de Tier-list. Nous avons analysé le cahier des charges afin d'élaborer l'arbre des tâches de l'application. Cette étape d'ingénierie logicielle a permis de structurer proprement l'architecture globale, de définir les comportements attendus du système et de préparer le découpage du projet en modules indépendants pour notre travail de groupe.
+      miseEnAvant: true
+- code: AC11-03
+  titre: Faire des essais et évaluer leurs résultats
+  description: Rédiger et exécuter des tests unitaires et fonctionnels, analyser les écarts par rapport aux specs.
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: Afin de garantir la qualité et la robustesse de notre application, nous avons suivi un protocole de validation strict en situation. Nous avons testé manuellement l'intégralité des cas d'utilisation (création, glisser-déposer d'items, import via API) pour répertorier le statut de chaque fonctionnalité ('Fait', 'Partiellement fait' ou 'Pas fait'). Cela nous a permis d'évaluer le comportement de l'application face aux bugs graphiques et d'ajuster les fonctionnalités optionnelles en fonction des imprévus.
+      miseEnAvant: true
+- code: AC11-04
+  titre: Développer des interfaces utilisateurs
+  description: Concevoir et implémenter des IHM ergonomiques et accessibles (web, bureau, mobile).
+  blocs: []

@@ -1,19 +1,44 @@
 titre: Administrer
+sousTitre: ''
 annee: but1
 code: C3
 icone: server
 description: Installer, configurer, déployer et maintenir des infrastructures, services et réseaux.
 presentation: ''
 acs:
-  - code: AC13.01
-    titre: Identifier les différents composants (matériels et logiciels) d'un système numérique
-    blocs: []
-  - code: AC13.02
-    titre: Utiliser les fonctionnalités de base d'un système multitâches / multiutilisateurs
-    blocs: []
-  - code: AC13.03
-    titre: Installer et configurer un système d'exploitation et des outils de développement
-    blocs: []
-  - code: AC13.04
-    titre: Configurer un poste de travail dans un réseau d'entreprise
-    blocs: []
+- code: AC13-01
+  titre: Identifier les composants matériels d'un poste
+  description: Reconnaître et décrire les composants physiques (CPU, RAM, stockage, périphériques, bus).
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: Dans le cadre de la SAÉ 2.03, j'ai réalisé un guide d'installation complet pour déployer une pile LAMP (Linux, Apache, MySQL, PHP) et une application CGI (Biorythmes) sur une machine virtuelle Linux (Ubuntu/Debian). J'ai configuré l'environnement de développement en installant les outils de compilation essentiels (gcc, make) et en automatisant la génération de l'application via un fichier Makefile. J'ai également géré les variables d'environnement et les répertoires cibles pour le déploiement des scripts CGI.
+      miseEnAvant: true
+- code: AC13-02
+  titre: Utiliser les fonctionnalités d'un système multitâches
+  description: 'Manipuler en ligne de commande un OS Linux : processus, droits, redirections, scripts shell.'
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: Dans le cadre de la SAÉ 2.03, j'ai appréhendé la configuration et la connectivité réseaux nécessaires à l'administration d'un serveur distant. Pour réaliser l'installation de la pile LAMP, j'ai dû utiliser des protocoles et services réseau fondamentaux. Je me suis connecté à la machine virtuelle de manière sécurisée via le protocole SSH sur le port 22. J'ai également configuré le serveur web Apache pour écouter les requêtes HTTP entrantes (port 80) et j'ai validé la bonne connectivité réseau de la machine en mettant à jour les paquets distants via Internet.
+      miseEnAvant: true
+- code: AC13-03
+  titre: Installer et configurer un système d'exploitation
+  description: Déployer et paramétrer un OS et des outils de développement sur une machine physique ou virtuelle.
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: La réalisation de la SAÉ 2.03 m'a permis de maîtriser l'administration d'un serveur Linux exclusivement en ligne de commande (via une connexion distante SSH). J'ai manipulé les commandes de gestion des paquets (apt update, apt install) pour installer les services réseau, et j'ai configuré les droits d'accès et de sécurité fins des fichiers et répertoires à l'aide des commandes chmod (notamment chmod 755 pour exécuter les scripts CGI) et chown pour la gestion des utilisateurs système (comme l'utilisateur info).
+      miseEnAvant: true
+- code: AC13-04
+  titre: Configurer un poste dans un réseau d'entreprise
+  description: Configurer adressage IP, DNS, passerelle ; diagnostiquer la connectivité réseau.
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: Pour l'infrastructure de la SAÉ 2.03, l'intégralité du serveur web et de la base de données a été déployée sur une machine virtuelle Linux isolée. J'ai appris à me connecter à cet environnement virtualisé, à comprendre l'importance de l'isolation des services (séparation de la machine hôte et de la machine de production) et à configurer le serveur Apache pour qu'il serve les pages web et exécute les requêtes de l'application CGI à travers le réseau.
+      miseEnAvant: true

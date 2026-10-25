@@ -1,16 +1,35 @@
 titre: Collaborer
+sousTitre: ''
 annee: but1
 code: C6
 icone: users
 description: Acquérir et exploiter les aptitudes pour travailler efficacement en équipe IT.
 presentation: ''
 acs:
-  - code: AC16.01
-    titre: Appréhender l'écosystème numérique
-    blocs: []
-  - code: AC16.02
-    titre: Découvrir les aptitudes requises selon les différents secteurs informatiques
-    blocs: []
-  - code: AC16.03
-    titre: Identifier les statuts, les fonctions et les rôles de chaque membre d'une équipe pluridisciplinaire
-    blocs: []
+- code: AC16-01
+  titre: Appréhender l'écosystème numérique
+  description: Identifier les acteurs du secteur, les types d'entreprises, les métiers et les enjeux du numérique.
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: Dans le cadre de la SAÉ 2.06 réalisée en groupe, nous avons dû structurer notre équipe de travail. J'ai participé à la répartition des rôles et des tâches de chacun en fonction des forces individuelles, ce qui nous a permis de comprendre comment s'organise une équipe pluridisciplinaire en informatique. Nous avons défini des responsabilités claires pour s'assurer qu'aucun membre ne se retrouve bloqué ou sans travail.
+      miseEnAvant: true
+- code: AC16-02
+  titre: Découvrir les aptitudes requises par secteur
+  description: Comparer les profils (dev, data, sys, réseau, cybersec…) et leurs compétences spécifiques.
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: Le travail en trinôme lors de cette SAÉ m'a permis de développer mes compétences interpersonnelles et ma communication. Nous avons mis en place des points réguliers pour planifier nos séances, anticiper les tâches à venir et résoudre collectivement les difficultés rencontrées. J'ai su écouter les propositions de mes camarades, donner mon avis de manière constructive et m'impliquer activement pour que le groupe progresse dans les temps.
+      miseEnAvant: true
+- code: AC16-03
+  titre: Identifier les rôles de chaque membre d'une équipe
+  description: Distinguer statuts, fonctions et responsabilités dans une équipe projet ou une DSI.
+  blocs:
+  - discriminant: texte
+    value:
+      titre: ''
+      texte: Au travers des différentes activités d'organisation de cette SAÉ et des ressources de communication associées (R2.13 / R2.14), j'ai pu identifier les compétences et aptitudes professionnelles requises dans le monde de l'informatique. Cela m'a permis de faire le lien entre le comportement attendu en équipe et la réalité des métiers du numérique que j'envisage pour mon projet professionnel.
+      miseEnAvant: true

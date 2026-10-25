@@ -18,7 +18,7 @@ const annee = ANNEES.find((a) => a.id === entry.annee);
         <span class="pastille"><Icone nom={entry.icone} /></span>
         <span class="etiquette">{annee?.label} · {entry.code}</span>
       </div>
-      <h1 class="titre-section" style="margin-bottom:12px">{entry.titre}</h1>
+      <h1 class="titre-section titre-comp" style="margin-bottom:12px">{entry.titre}{entry.sousTitre && <em> {entry.sousTitre}</em>}</h1>
       <p class="muted" style="font-size:1.1rem">{entry.description}</p>
       {entry.presentation && <p style="white-space:pre-line">{entry.presentation}</p>}
 
@@ -26,11 +26,12 @@ const annee = ANNEES.find((a) => a.id === entry.annee);
       {entry.acs.map((ac, i) => (
         <details class="carte ac" open={i === 0}>
           <summary><span class="ac__code">{ac.code}</span><span class="ac__titre">{ac.titre}</span></summary>
+          {ac.description && <p class="muted" style="margin:10px 0 0">{ac.description}</p>}
           <div class="blocs">
             {ac.blocs.length === 0 && <p class="muted" style="margin:0">Contenu à venir.</p>}
             {ac.blocs.map((b) => {
               if (b.discriminant === 'texte') return (
-                <div class="bloc-texte">{b.value.titre && <h4>{b.value.titre}</h4>}<p>{b.value.texte}</p></div>
+                <div class:list={['bloc-texte', { 'mise-en-avant': b.value.miseEnAvant }]}>{b.value.titre && <h4>{b.value.titre}</h4>}<p>{b.value.texte}</p></div>
               );
               if (b.discriminant === 'image' && b.value.image) return (
                 <div class="bloc-image"><figure><img src={b.value.image} alt={b.value.legende || ac.titre} loading="lazy" />{b.value.legende && <figcaption>{b.value.legende}</figcaption>}</figure></div>

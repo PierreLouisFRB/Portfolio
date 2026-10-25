@@ -10,6 +10,7 @@ const blocs = fields.blocks(
       schema: fields.object({
         titre: fields.text({ label: 'Titre (optionnel)' }),
         texte: fields.text({ label: 'Texte', multiline: true }),
+        miseEnAvant: fields.checkbox({ label: 'Mise en avant (encadré 💡)', defaultValue: true }),
       }),
     },
     image: {
@@ -98,6 +99,7 @@ export default config({
           ],
           defaultValue: 'but1',
         }),
+        sousTitre: fields.text({ label: 'Sous-titre (en doré)', description: "ex : le développement d'une application" }),
         code: fields.text({ label: 'Code', description: 'ex : C1' }),
         icone: fields.select({
           label: 'Icône',
@@ -117,6 +119,7 @@ export default config({
           fields.object({
             code: fields.text({ label: 'Code', description: 'ex : AC11.01' }),
             titre: fields.text({ label: 'Intitulé' }),
+            description: fields.text({ label: 'Description courte', multiline: true }),
             blocs,
           }),
           {
